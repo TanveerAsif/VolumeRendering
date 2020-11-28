@@ -178,7 +178,7 @@ bool Dx11_Engine::InitializeWindow()
 
 
 	m_hWnd = CreateWindowEx(WS_EX_APPWINDOW, L"Engine", L"Engine", WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP
-	, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN)
+	, 500, 150, /*GetSystemMetrics(SM_CXSCREEN)*/1024, /*GetSystemMetrics(SM_CYSCREEN)*/720
 	, 0, 0, m_hInstance, NULL);
 	
 	if (m_hWnd == NULL)

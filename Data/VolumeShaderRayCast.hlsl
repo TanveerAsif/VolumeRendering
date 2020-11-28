@@ -81,8 +81,8 @@ float4 RayPS(VSOutput input) : SV_TARGET
 {
 	float stepSize = 0.0005f;
 	float2 screenPos;
-	screenPos.x = input.Position.x / 1920;// 640;
-	screenPos.y = input.Position.y / 1080;// 480;
+	screenPos.x = input.Position.x / 1024;// 1920;// 640;
+	screenPos.y = input.Position.y / 720;// 1080;// 480;
 	float3 start = txFrontFace.Sample(textureSampler, screenPos);
 	float3 end = txBackFace.Sample(textureSampler, screenPos);
 	float3 dir = end - start;

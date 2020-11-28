@@ -5,8 +5,8 @@
 
 const float SCREEN_DEPTH = 10000.0f;
 const float SCREEN_NEAR = 0.1f;
-const int SHADOW_WIDTH = 1920;// 1024;
-const int SHADOW_HEIGHT = 1080;// 1024;
+const int SHADOW_WIDTH = 1024;// 1920;// 1024;
+const int SHADOW_HEIGHT = 720;// 1080;// 1024;
 
 bool g_bComeOutFromWater = false;
 bool g_bRenderWatertoAir = false;
@@ -308,19 +308,19 @@ void Dx11_Graphics::RenderScene(float _fTick)
 		m_pVolRender->GetIntersectionPoint(nPoints);
 
 #endif
-		//RENDER TEXT
-		//m_pDirect3D->SetDepthBufferOFF();
-		m_pDirect3D->EnableBlendState();
-		worldMat = m_pDirect3D->GetWorldMatrix();
-		orthoMat = m_pDirect3D->GetOrthogonalProjectionMatrix();
-		char strCameraPos[100];
-		D3DXVECTOR3 vPos = m_pCamera->GetPosition();
-		D3DXVECTOR3 vDir = m_pCamera->GetDirection();
-		//sprintf_s(strCameraPos, "CameraPos = (%.0f,%0.0f,%0.0f) CameraDir(%.1f,%0.1f,%0.1f)", vPos.x, vPos.y, vPos.z, vDir.x, vDir.y, vDir.z);
-		sprintf_s(strCameraPos, "CameraPos(%0.1f,%0.1f,%0.1f)", vPos.x, vPos.y, vPos.z);
-		m_pText->Render(pDeviceContext, strCameraPos, worldMat, orthoMat);
-		m_pDirect3D->DisableBlendState();
-		//m_pDirect3D->SetDepthBufferON();
+		////RENDER TEXT
+		////m_pDirect3D->SetDepthBufferOFF();
+		//m_pDirect3D->EnableBlendState();
+		//worldMat = m_pDirect3D->GetWorldMatrix();
+		//orthoMat = m_pDirect3D->GetOrthogonalProjectionMatrix();
+		//char strCameraPos[100];
+		//D3DXVECTOR3 vPos = m_pCamera->GetPosition();
+		//D3DXVECTOR3 vDir = m_pCamera->GetDirection();
+		////sprintf_s(strCameraPos, "CameraPos = (%.0f,%0.0f,%0.0f) CameraDir(%.1f,%0.1f,%0.1f)", vPos.x, vPos.y, vPos.z, vDir.x, vDir.y, vDir.z);
+		//sprintf_s(strCameraPos, "CameraPos(%0.1f,%0.1f,%0.1f)", vPos.x, vPos.y, vPos.z);
+		//m_pText->Render(pDeviceContext, strCameraPos, worldMat, orthoMat);
+		//m_pDirect3D->DisableBlendState();
+		////m_pDirect3D->SetDepthBufferON();
 				
 		m_pDirect3D->EndScene();
 	}
