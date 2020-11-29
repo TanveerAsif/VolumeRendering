@@ -97,5 +97,27 @@ float4 RayPS(VSOutput input) : SV_TARGET
 		float value = txVolume.SampleLevel(textureSampler, samplePos, 0).r;
 		m = max(m, value);
 	}	
-	return float4(m, m, m, 1.0f);
+	//return float4(m, m, m, 1.0f);
+	//return float4(1.0 - m, 1.0 - m, 1.0 - m, 1.0f); //Inverse of Grey
+	//return float4(m-0.5, m-0.5, m-0.5, 1.0f); //light grey
+	//return float4(m , m , 0.0, 1.0f); //Yellow
+	//return float4(m, 0, 0.0, 1.0f); //Red
+	//return float4(0, m, 0.0, 1.0f); //Green
+	return float4(0, 0, m, 1.0f); //Blue
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
